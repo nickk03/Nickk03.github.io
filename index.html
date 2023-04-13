@@ -3,8 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>Multi-page Website</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function showPage(pageId) {
+            var pages = document.getElementsByClassName("page");
+            for (var i = 0; i < pages.length; i++) {
+                pages[i].classList.add("hidden");
+            }
+            document.getElementById(pageId).classList.remove("hidden");
+        }
+    </script>
 </head>
 <body>
-    <h1>Welcome</h1>
-<p><a href="https://nickk03.github.io/page2/">Continue</a></p>
+    <div id="page1" class="page">
+        <h1>Welcome :)</h1>
+        <p><a href="#" onclick="showPage('page2');">Continue</a></p>
+    </div>
+
+    <div id="page2" class="page hidden">
+        <h1>You Have Two Options...</h1>
+        <p><a href="#" onclick="showPage('page3');">Blue Pill</a></p>
+        <p><a href="https://vsco.co/nickkz03">Red Pill</a></p>
+    </div>
+
+    <div id="page3" class="page hidden">
+        <h1>Should Have Picked Red...</h1>
+    </div>
+</body>
+</html>
